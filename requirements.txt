@@ -1,1 +1,12 @@
+streamlit
+numpy
 seaborn
+matplotlib
+plotly
+pybase64
+netCDF4
+xarray
+sklearn
+keras
+pandas
+datetime
