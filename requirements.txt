@@ -10,3 +10,4 @@ scikit-learn
 keras
 pandas
 tensorflow
+keras.layers
