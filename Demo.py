@@ -110,7 +110,7 @@ if page == pages[0]:
         unsafe_allow_html=True,
     )
 
-    #Faire une fonction avec le display
+    '''#Faire une fonction avec le display
     with open('IcebreakerChart.pdf',"rb") as f:
       base64_pdf = base64.b64encode(f.read()).decode('utf-8')
     
@@ -118,7 +118,7 @@ if page == pages[0]:
     st.markdown(pdf_display, unsafe_allow_html=True)
 
     st.write('Statistics')
-    st.image('Statistics on Icebreakers.png')
+    st.image('Statistics on Icebreakers.png')'''
 
     uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
     for uploaded_file in uploaded_files:
