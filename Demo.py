@@ -101,8 +101,8 @@ if page == pages[0]:
     st.title("Avoiding Titanic")
     st.header('First Option')
     st.image('RescueHelicopter.jpg')
-    st.header('Second Option')
-    st.image('Icebreaker.jpg')
+    '''st.header('Second Option')
+    st.image('Icebreaker.jpg')'''
     st.write('Link to US icebreakers')
     
     st.write(
@@ -131,13 +131,13 @@ if page == pages[1]:
     st.header('Statistics on the density of icebergs in the ocean')
     st.write('Number of icebergs in the dataset ' + str(number_of_icebergs))
     st.write("Check out this [link](https://data.marine.copernicus.eu/product/SEAICE_ARC_SEAICE_L4_NRT_OBSERVATIONS_011_007/description?view=-&product_id=-&option=-)")
-    ds = xr.open_dataset('Icebergs.nc')
+    '''ds = xr.open_dataset('Icebergs.nc')
     df = ds.to_dataframe()
     count = len(df)
     st.table(df[~pd.isnull(df['ibc'])].head(5))
     st.write('This table contains ' + str(count) + ' lines.')
 
-    st.pyplot(fig)
+    st.pyplot(fig)'''
 
     option = st.selectbox('Models', tuple(models_))
     st.write('You selected:', option)
