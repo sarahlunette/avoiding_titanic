@@ -101,8 +101,8 @@ if page == pages[0]:
     st.title("Avoiding Titanic")
     st.header('First Option')
     st.image('RescueHelicopter.jpg')
-    '''st.header('Second Option')
-    st.image('Icebreaker.jpg')'''
+    st.header('Second Option')
+    st.write('Icebreaker')
     
     uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
     for uploaded_file in uploaded_files:
