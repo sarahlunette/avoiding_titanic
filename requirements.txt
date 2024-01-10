@@ -9,3 +9,4 @@ xarray
 scikit-learn
 keras
 pandas
+tensorflow
