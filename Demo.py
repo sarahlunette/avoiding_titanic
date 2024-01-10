@@ -25,7 +25,7 @@ df = df[['Obs_Date_NZ', 'Obs_Lat', 'Obs_Lon', 'Total', 'size1','size2', 'size3',
 df['Obs_Date_NZ'] = df['Obs_Date_NZ'].apply(str)
 df['Obs_Date_NZ'][0]
 df['Obs_Date_NZ']  = df['Obs_Date_NZ'].replace(r'\\', '-', regex=True)
-df['Obs_Date_NZ'] = pd.to_datetime(df['Obs_Date_NZ'])
+df['Obs_Date_NZ'] = pd.to_datetime(df['Obs_Date_NZ'], dayfirst=True)
 
 df['Total_observed'] = df['size1'] + df['size2']  + df['size3'] + df['size4'] + df['size5']
 df['T'] = df['Total']-df['Total_observed']
@@ -103,23 +103,7 @@ if page == pages[0]:
     st.image('RescueHelicopter.jpg')
     '''st.header('Second Option')
     st.image('Icebreaker.jpg')'''
-    st.write('Link to US icebreakers')
     
-    st.write(
-        f'<iframe src="https://www.dco.uscg.mil/Portals/9/DCO%20Documents/Office%20of%20Waterways%20and%20Ocean%20Policy/20170501%20major%20icebreaker%20chart.pdf?ver=2017-06-08-091723-907"></iframe>',
-        unsafe_allow_html=True,
-    )
-
-    '''#Faire une fonction avec le display
-    with open('IcebreakerChart.pdf',"rb") as f:
-      base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-    
-    pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'   
-    st.markdown(pdf_display, unsafe_allow_html=True)
-
-    st.write('Statistics')
-    st.image('Statistics on Icebreakers.png')'''
-
     uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
     for uploaded_file in uploaded_files:
         bytes_data = uploaded_file.read()
@@ -131,13 +115,6 @@ if page == pages[1]:
     st.header('Statistics on the density of icebergs in the ocean')
     st.write('Number of icebergs in the dataset ' + str(number_of_icebergs))
     st.write("Check out this [link](https://data.marine.copernicus.eu/product/SEAICE_ARC_SEAICE_L4_NRT_OBSERVATIONS_011_007/description?view=-&product_id=-&option=-)")
-    '''ds = xr.open_dataset('Icebergs.nc')
-    df = ds.to_dataframe()
-    count = len(df)
-    st.table(df[~pd.isnull(df['ibc'])].head(5))
-    st.write('This table contains ' + str(count) + ' lines.')
-
-    st.pyplot(fig)'''
 
     option = st.selectbox('Models', tuple(models_))
     st.write('You selected:', option)
