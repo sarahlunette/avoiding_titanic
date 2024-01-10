@@ -6,6 +6,6 @@ plotly
 pybase64
 netCDF4
 xarray
-sklearn
+scikit-learn
 keras
 pandas
