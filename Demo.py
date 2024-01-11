@@ -118,13 +118,6 @@ if page == pages[0]:
         pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
         st.markdown(pdf_display, unsafe_allow_html=True)
         
-        uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
-        
-    for uploaded_file in uploaded_files:
-        bytes_data = uploaded_file.read()
-        st.write("filename:", uploaded_file.name)
-        st.write(bytes_data)
-
 if page == pages[1]:
     st.title('Copernicus Data')
     st.header('Statistics on the density of icebergs in the ocean')
